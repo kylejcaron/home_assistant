@@ -172,7 +172,7 @@ action:
       light_timeout: 0
       target_light: !input target_light
       start_color: !input start_rgb_color
-      target_color: !input target_rgb_color
+      end_color: !input target_rgb_color
     # data:
     #   target_kelvin: !input target_kelvin_1
     #   start_kelvin: !input start_kelvin_temp
