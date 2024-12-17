@@ -120,13 +120,13 @@ sequence:
               value_template: >-
                 {{ (((as_timestamp(now()) - start_time) / individual_step) |
                 round(0, "ceil")) > steps }}
-            - condition: template
-              value_template: >-
-                {{ 
-                  (current_r | int) >= (end_r | int) and
-                  (current_g | int) >= (end_g | int) and
-                  (current_b | int) >= (end_b | int)
-                }}
+            # - condition: template
+            #   value_template: >-
+            #     {{ 
+            #       (current_r | int) >= (end_r | int) and
+            #       (current_g | int) >= (end_g | int) and
+            #       (current_b | int) >= (end_b | int)
+            #     }}
       sequence:
         - variables:
             steps_to_now: |-
