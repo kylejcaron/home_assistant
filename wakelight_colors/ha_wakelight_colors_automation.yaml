@@ -1,5 +1,5 @@
 blueprint:
-  name: Wake Light
+  name: Wake Light - Colors
   description: Turn a light on based on detected motion
   domain: automation
   input:
