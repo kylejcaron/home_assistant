@@ -12,7 +12,7 @@ blueprint:
             - domain: input_datetime
     workday_sensor:
       name: Workday Sensor
-      description: Binary Sensor for determining whether it should run. Typically from Workday Integration
+      description: Binary Sensor for determining whether it should run. 
       selector:
         entity:
           filter:
@@ -47,18 +47,18 @@ blueprint:
         number:
           min: 1
           max: 60
-    start_rgb_color:
-      description: Starting color in RGB format
-      selector:
-        color_rgb: {}
-      default: [255, 0, 0]
-      name: Starting Color
-    target_rgb_color:
-      description: Ending color in RGB format
-      selector:
-        color_rgb: {}
-      default: [255, 0, 0]
-      name: Ending Color
+    # start_rgb_color:
+    #   description: Starting color in RGB format
+    #   selector:
+    #     color_rgb: {}
+    #   default: [255, 0, 0]
+    #   name: Starting Color
+    # target_rgb_color:
+    #   description: Ending color in RGB format
+    #   selector:
+    #     color_rgb: {}
+    #   default: [255, 0, 0]
+    #   name: Ending Color
     start_kelvin_temp:
       description: Start Kelvin value (warm) for 1st run
       selector:
@@ -72,7 +72,7 @@ blueprint:
       selector:
         color_temp:
           unit: kelvin
-      default: 3000
+      default: 6000
       name: Target Kelvin 1
     max_brightness_1:
       name: Maximum Brightness 1
@@ -159,7 +159,7 @@ action:
       color_temp_kelvin: !input start_kelvin_temp
       brightness_pct: 1
       entity_id: !input target_light
-      rgb_color: !input start_rgb_color
+      # rgb_color: !input start_rgb_color
   - delay:
       seconds: 5
   - action: !input alarm_script
@@ -171,8 +171,8 @@ action:
       steps_per_minute: !input steps_per_minute
       light_timeout: 0
       target_light: !input target_light
-      start_rgb: !input start_rgb_color
-      target_rgb: !input target_rgb_color
+      # start_color: !input start_rgb_color
+      # target_color: !input target_rgb_color
     # data:
     #   target_kelvin: !input target_kelvin_1
     #   start_kelvin: !input start_kelvin_temp
