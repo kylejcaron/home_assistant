@@ -16,7 +16,7 @@ blueprint:
       selector:
         entity:
           filter:
-            - domain: binary_sensor
+            - domain: input_boolean
     alarm_script:
       name: Script to trigger
       description: Light Alarm Script
