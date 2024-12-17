@@ -47,33 +47,33 @@ blueprint:
         number:
           min: 1
           max: 60
-    # start_rgb_color:
-    #   description: Starting color in RGB format
-    #   selector:
-    #     color_rgb: {}
-    #   default: [255, 0, 0]
-    #   name: Starting Color
-    # target_rgb_color:
-    #   description: Ending color in RGB format
-    #   selector:
-    #     color_rgb: {}
-    #   default: [255, 0, 0]
-    #   name: Ending Color
-    start_kelvin_temp:
-      description: Start Kelvin value (warm) for 1st run
+    start_rgb_color:
+      description: Starting color in RGB format
       selector:
-        color_temp:
-          unit: kelvin
-      default: 2500
-      name: Starting Kelvin
-    target_kelvin_1:
-      description: >-
-        Target Kelvin value (cold) for the end of the first run
+        color_rgb: {}
+      default: [255, 0, 0]
+      name: Starting Color
+    target_rgb_color:
+      description: Ending color in RGB format
       selector:
-        color_temp:
-          unit: kelvin
-      default: 6000
-      name: Target Kelvin 1
+        color_rgb: {}
+      default: [255, 0, 0]
+      name: Ending Color
+    # start_kelvin_temp:
+    #   description: Start Kelvin value (warm) for 1st run
+    #   selector:
+    #     color_temp:
+    #       unit: kelvin
+    #   default: 2500
+    #   name: Starting Kelvin
+    # target_kelvin_1:
+    #   description: >-
+    #     Target Kelvin value (cold) for the end of the first run
+    #   selector:
+    #     color_temp:
+    #       unit: kelvin
+    #   default: 6000
+    #   name: Target Kelvin 1
     max_brightness_1:
       name: Maximum Brightness 1
       description: Finish value for first run
@@ -156,23 +156,23 @@ condition:
 action:
   - action: light.turn_on
     data:
-      color_temp_kelvin: !input start_kelvin_temp
+      # color_temp_kelvin: !input start_kelvin_temp
       brightness_pct: 1
       entity_id: !input target_light
-      # rgb_color: !input start_rgb_color
+      rgb_color: !input start_rgb_color
   - delay:
       seconds: 5
   - action: !input alarm_script
     data:
-      target_kelvin: !input target_kelvin_1
-      start_kelvin: !input start_kelvin_temp
+      # target_kelvin: !input target_kelvin_1
+      # start_kelvin: !input start_kelvin_temp
       max_brightness_pct: !input max_brightness_1
       alarm_length: !input alarm_length_1
       steps_per_minute: !input steps_per_minute
       light_timeout: 0
       target_light: !input target_light
-      # start_color: !input start_rgb_color
-      # target_color: !input target_rgb_color
+      start_color: !input start_rgb_color
+      target_color: !input target_rgb_color
     # data:
     #   target_kelvin: !input target_kelvin_1
     #   start_kelvin: !input start_kelvin_temp
