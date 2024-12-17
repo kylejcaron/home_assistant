@@ -61,7 +61,7 @@ fields:
     selector:
       number:
         min: 1
-        max: 12
+        max: 60
     default: 12
     name: Steps Per minute
   target_light:
