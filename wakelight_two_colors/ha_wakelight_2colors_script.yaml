@@ -1,5 +1,5 @@
 blueprint:
-  name: Wake Light Sunrise - Colors
+  name: Wake Light Sunrise - Color Gradient
   author: steriku
   description: >
     Companion Script to the Wake Light alarm automation blueprint, based on steriku's implementation
